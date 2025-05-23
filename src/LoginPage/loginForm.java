@@ -347,8 +347,10 @@ public class loginForm extends javax.swing.JFrame {
         int userId = sess.getUid();
 
         // Retrieve the status and type after login
-        String status = getStatusFromDatabase(username);  // Active/Inactive
-        String type = getUserTypeFromDatabase(username);  // Admin/User/Police
+      String status = getStatusFromDatabase(username);
+  // Active/Inactive
+       String type = sess.getType();
+  // Admin/User/Police
         
         try {
             String query2 = "SELECT * FROM tbl_users WHERE u_username = ?";

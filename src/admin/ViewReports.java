@@ -178,6 +178,7 @@ private void loadReportsData() {
     }
 }
 
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -258,38 +259,7 @@ private void loadReportsData() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-   Session sess = Session.getInstance();
-    int selectedRow = tblblotter.getSelectedRow(); 
-    int userId = sess.getUid(); // Get logged-in user ID
-    String username = sess.getUsername(); // Make sure this exists in your Session class
-
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(this, "Please select a report first.");
-        return;
-    }
-
-    int reportId = Integer.parseInt(tblblotter.getValueAt(selectedRow, 0).toString()); 
-
-    try {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/blotter", "root", "");
-        String sql = "UPDATE reports SET status = 'Resolved' WHERE report_id = ?";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, reportId);
-        int updated = stmt.executeUpdate();
-
-        if (updated > 0) {
-            JOptionPane.showMessageDialog(this, "Report marked as resolved.");
-            tblblotter.setValueAt("Resolved", selectedRow, 7); // assuming 'Status' is at column index 7
-            logEvent(userId, username, "Resolved a blotter report (ID: " + reportId + ")");
-        } else {
-            JOptionPane.showMessageDialog(this, "Failed to update report status.");
-        }
-
-        conn.close();
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
-    }      // TODO add your handling code here:
+   // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

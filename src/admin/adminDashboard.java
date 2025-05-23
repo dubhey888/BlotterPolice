@@ -369,9 +369,14 @@ private void loadUserProfile() {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        Type userRole = getType();
+   String userRole = Session.getInstance().getType(); // get user role (u_type)
+if (userRole != null) {
+    userRole = userRole.trim();
+}
 
-if (!userRole.toString().equalsIgnoreCase("admin")) {
+System.out.println("DEBUG: userRole = '" + userRole + "'");
+
+if (!"Admin".equalsIgnoreCase(userRole)) {
     JOptionPane.showMessageDialog(this,
         "Access Denied: Only Admin can access the Users Form.",
         "Permission Denied",
@@ -381,6 +386,9 @@ if (!userRole.toString().equalsIgnoreCase("admin")) {
     usf.setVisible(true);
     this.dispose();
 }
+
+
+
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked

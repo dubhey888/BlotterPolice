@@ -292,6 +292,7 @@ public class usersForm extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         update = new javax.swing.JButton();
         register1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -361,7 +362,7 @@ public class usersForm extends javax.swing.JFrame {
                 updateActionPerformed(evt);
             }
         });
-        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 140, 40));
+        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 140, 40));
 
         register1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         register1.setText("DELETE");
@@ -370,7 +371,17 @@ public class usersForm extends javax.swing.JFrame {
                 register1ActionPerformed(evt);
             }
         });
-        jPanel2.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 130, 40));
+        jPanel2.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 130, 40));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("BACK");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 70));
 
@@ -481,6 +492,12 @@ public class usersForm extends javax.swing.JFrame {
         deleteUser();
     }//GEN-LAST:event_register1ActionPerformed
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        adminDashboard ds = new adminDashboard();
+        ds.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -525,6 +542,7 @@ public class usersForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
