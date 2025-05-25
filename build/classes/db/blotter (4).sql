@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2025 at 02:17 PM
+-- Generation Time: May 25, 2025 at 01:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,18 +36,20 @@ CREATE TABLE `reports` (
   `location` varchar(100) DEFAULT NULL,
   `date_of_incident` date DEFAULT NULL,
   `time_of_incident` time DEFAULT NULL,
-  `status` varchar(20) DEFAULT 'Pending'
+  `status` varchar(20) DEFAULT 'Pending',
+  `suspect_description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reports`
 --
 
-INSERT INTO `reports` (`report_id`, `u_id`, `full_name`, `incident_type`, `description`, `location`, `date_of_incident`, `time_of_incident`, `status`) VALUES
-(1, 0, 'Ross Sabio', 'Theft', 'TInakbu ang Cellphone ko', 'Ward 2', '2025-05-12', '01:17:00', 'Resolved'),
-(2, 3, 'Jay Reyes', 'Assault', 'Stab in the Stomach', 'Ward 1', '2025-05-03', '14:06:00', 'Pending'),
-(3, 3, 'Kayeshe Monggol', 'Theft', 'Tinakbo ang phone ko nag lalakad lang ako', 'Tungkop', '2025-05-08', '03:11:00', 'Resolved'),
-(4, 5, 'Mark Pacaldo', 'Vandalism', 'The guy on the black hoodie is vandal my car', 'Tungkop', '2025-05-16', '23:15:00', 'Pending');
+INSERT INTO `reports` (`report_id`, `u_id`, `full_name`, `incident_type`, `description`, `location`, `date_of_incident`, `time_of_incident`, `status`, `suspect_description`) VALUES
+(1, 0, 'Ross Sabio', 'Theft', 'TInakbu ang Cellphone ko', 'Ward 2', '2025-05-12', '01:17:00', 'Resolved', NULL),
+(2, 3, 'Jay Reyes', 'Assault', 'Stab in the Stomach', 'Ward 1', '2025-05-03', '14:06:00', 'Pending', NULL),
+(3, 3, 'Kayeshe Monggol', 'Theft', 'Tinakbo ang phone ko nag lalakad lang ako', 'Tungkop', '2025-05-08', '03:11:00', 'Resolved', NULL),
+(4, 5, 'Mark Pacaldo', 'Vandalism', 'The guy on the black hoodie is vandal my car', 'Tungkop', '2025-05-16', '23:15:00', 'Pending', NULL),
+(5, 3, 'Hero Sabino', 'Theft', 'When i walking my phone grabbed in the walkways', 'Naga', '2025-02-04', '03:12:00', 'Resolved', 'Tall Man, Red Hoodie');
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,32 @@ INSERT INTO `tbl_log` (`log_id`, `u_id`, `u_username`, `login_time`, `u_type`, `
 (43, 5, 'kaye123', '2025-05-18 12:17:24', 'Failed - Inactive Account', 'Inactive', '2025-05-18 12:17:24', NULL),
 (44, 5, 'kaye123', '2025-05-18 12:17:24', 'Success - User Login', 'Inactive', '2025-05-18 12:17:24', NULL),
 (45, 5, 'kaye123', '2025-05-18 12:17:24', 'Submitted a new blotter report', 'Inactive', '2025-05-18 12:17:24', NULL),
-(46, 5, 'kaye123', '2025-05-18 12:17:24', 'Success - User Login', 'Inactive', '2025-05-18 12:17:24', NULL);
+(46, 5, 'kaye123', '2025-05-18 12:17:24', 'Success - User Login', 'Inactive', '2025-05-18 12:17:24', NULL),
+(47, 5, 'kaye123', '2025-05-23 06:48:53', 'Success - User Action', 'Inactive', '2025-05-23 06:48:53', 'User Reset Their Password'),
+(48, 5, 'kaye123', '2025-05-23 06:48:53', 'Success - User Login', 'Inactive', '2025-05-23 06:48:53', NULL),
+(52, 5, 'kaye123', '2025-05-23 06:48:53', 'Success - User Login', 'Inactive', '2025-05-23 06:48:53', NULL),
+(53, 5, 'kaye123', '2025-05-23 06:48:53', 'Success - User Action', 'Inactive', '2025-05-23 06:48:53', 'User Changed Their Password'),
+(54, 5, 'kaye123', '2025-05-23 06:50:37', 'Success - User Login', 'Inactive', '2025-05-23 06:50:37', NULL),
+(55, 5, 'kaye123', '2025-05-23 06:50:37', 'Success - Admin Login', 'Inactive', '2025-05-23 06:50:37', NULL),
+(56, 5, 'kaye123', '2025-05-23 06:53:46', 'Success - Admin Login', 'Inactive', '2025-05-23 06:53:46', NULL),
+(57, 5, 'kaye123', '2025-05-23 07:09:16', 'Success - Admin Login', 'Inactive', '2025-05-23 07:09:16', NULL),
+(59, 5, 'kaye123', '2025-05-23 07:12:05', 'Success - Admin Login', 'Inactive', '2025-05-23 07:12:05', NULL),
+(60, 5, 'kaye123', '2025-05-23 07:12:05', 'Success - Admin Login', 'Inactive', '2025-05-23 07:12:05', NULL),
+(61, 1, 'ross123', '2025-05-23 07:12:52', 'Success - Admin Login', 'Inactive', '2025-05-23 07:12:52', NULL),
+(62, 5, 'kaye123', '2025-05-23 07:16:00', 'Success - Admin Login', 'Inactive', '2025-05-23 07:16:00', NULL),
+(63, 5, 'kaye123', '2025-05-25 11:33:47', 'Success - Admin Login', 'Inactive', '2025-05-25 11:33:47', NULL),
+(64, 4, 'tupac123', '2025-05-23 07:18:55', 'Success - Police Login', 'Inactive', '2025-05-23 07:18:55', NULL),
+(65, 5, 'kaye123', '2025-05-25 11:33:47', 'Success - Admin Login', 'Inactive', '2025-05-25 11:33:47', NULL),
+(66, 5, 'kaye123', '2025-05-25 11:33:47', 'Success - Admin Login', 'Inactive', '2025-05-25 11:33:47', NULL),
+(67, 3, 'rose123', '2025-05-25 02:57:46', 'Success - User Login', 'Active', NULL, NULL),
+(68, 3, 'rose123', '2025-05-25 02:58:56', 'Submitted a new blotter report', 'Active', NULL, NULL),
+(69, 4, 'tupac123', '2025-05-25 03:00:47', 'Success - Police Login', 'Inactive', '2025-05-25 03:00:47', NULL),
+(71, 4, 'tupac123', '2025-05-25 11:33:09', 'Success - Police Login', 'Inactive', '2025-05-25 11:33:09', NULL),
+(72, 4, 'tupac123', '2025-05-25 11:33:09', 'Success - Police Login', 'Inactive', '2025-05-25 11:33:09', NULL),
+(73, 4, 'tupac123', '2025-05-25 11:33:09', 'Resolved a blotter report (ID: 5)', 'Inactive', '2025-05-25 11:33:09', NULL),
+(74, 4, 'tupac123', '2025-05-25 11:33:24', 'Success - Police Login', 'Inactive', '2025-05-25 11:33:24', NULL),
+(75, 5, 'kaye123', '2025-05-25 11:33:47', 'Success - Admin Login', 'Inactive', '2025-05-25 11:33:47', NULL),
+(76, 3, 'rose123', '2025-05-25 11:33:56', 'Success - User Login', 'Active', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,7 +156,7 @@ CREATE TABLE `tbl_users` (
   `u_username` varchar(255) NOT NULL,
   `u_email` varchar(255) NOT NULL,
   `u_status` varchar(255) NOT NULL,
-  `u_type` varchar(2555) NOT NULL,
+  `u_type` varchar(255) NOT NULL,
   `u_password` varchar(255) NOT NULL,
   `u_image` varchar(255) NOT NULL,
   `security_question` varchar(100) NOT NULL,
@@ -145,7 +172,7 @@ INSERT INTO `tbl_users` (`u_id`, `u_fname`, `u_lname`, `u_username`, `u_email`, 
 (2, 'mark', 'pacaldo', 'mark123', 'mark@gmail.com', 'Active', 'User', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', '', '', ''),
 (3, 'rose', 'reyes', 'rose123', 'rose@gmail.com', 'Active', 'User', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'Null', 'What\'s your favorite food?', 'qV/QG0FakhHmXWW/9kfkNE5/GUje75Wbca8h9ippdXE='),
 (4, 'tupac', 'pactu', 'tupac123', 'tupac123@gmail.com', 'Active', 'Police', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'Null', 'What\'s the name of your first pet?', 'Fkd2iMDgBpnGz6RJejYS1+g8UyBitkslD+2JCBKO1Ug='),
-(5, 'shea', 'kaye', 'kaye123', 'kayeshea@gmail.com', 'Active', 'User', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'Null', 'What\'s your favorite food?', '3kM+1VChYkp0J5qjDDa1LyhEJmEMAUtwAi5MiJ68qHU=');
+(5, 'shea', 'kaye', 'kaye123', 'kayeshea@gmail.com', 'Active', 'Admin', 'ky88G1YlfOhTmsJp16q0JVDaz4gY0HXwvfGZBWKq4+8=', 'Null', 'What\'s your favorite food?', '3kM+1VChYkp0J5qjDDa1LyhEJmEMAUtwAi5MiJ68qHU=');
 
 --
 -- Indexes for dumped tables
@@ -178,13 +205,13 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_log`
 --
 ALTER TABLE `tbl_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
