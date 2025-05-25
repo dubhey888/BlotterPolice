@@ -34,13 +34,13 @@ public class UserReportForm extends javax.swing.JFrame {
 private void handleSubmit() {
     String name = fname.getText();
     String desc = ID.getText();
+    String suspect = suspectDesc.getText(); // 🔍 get suspect description from form
     String location = Loc.getText();
     String type = inty.getSelectedItem().toString();
     String dateStr = yy.getSelectedItem() + "-" +
                      String.format("%02d", mm.getSelectedIndex() + 1) + "-" +
                      String.format("%02d", Integer.parseInt(dd.getSelectedItem().toString()));
 
-    // Convert to 24-hour format
     int hour = Integer.parseInt(hh.getSelectedItem().toString());
     if (pm.getSelectedItem().equals("PM") && hour != 12) hour += 12;
     if (pm.getSelectedItem().equals("AM") && hour == 12) hour = 0;
@@ -49,16 +49,15 @@ private void handleSubmit() {
     try {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/blotter", "root", "");
 
-        // Get session info
         Session sess = Session.getInstance();
-        int userId = sess.getUid(); // 🔑 get the logged-in user's ID
+        int userId = sess.getUid();
         String username = sess.getUsername();
 
-        // Add u_id to the INSERT
-        String sql = "INSERT INTO reports (u_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        // ✅ Include suspect_description in SQL
+        String sql = "INSERT INTO reports (u_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status, suspect_description) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, userId);               // ✅ u_id from session
+        stmt.setInt(1, userId);
         stmt.setString(2, name);
         stmt.setString(3, type);
         stmt.setString(4, desc);
@@ -66,11 +65,11 @@ private void handleSubmit() {
         stmt.setDate(6, java.sql.Date.valueOf(dateStr));
         stmt.setTime(7, java.sql.Time.valueOf(time24));
         stmt.setString(8, "Pending");
+        stmt.setString(9, suspect); // ✅ set the suspect description
 
         stmt.executeUpdate();
         JOptionPane.showMessageDialog(this, "Report submitted. It will be reviewed by the police.");
 
-        // Log the event
         logEvent(userId, username, "Submitted a new blotter report");
 
         conn.close();
@@ -78,7 +77,8 @@ private void handleSubmit() {
         e.printStackTrace();
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
-     this.dispose();
+
+    this.dispose();
 }
 
 
@@ -147,6 +147,10 @@ public void logEvent(int userId, String username, String userType) {
         pm = new javax.swing.JComboBox<>();
         sub = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        suspectDesc = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -229,11 +233,29 @@ public void logEvent(int userId, String username, String userType) {
                 subActionPerformed(evt);
             }
         });
-        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, -1, -1));
+        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("REPORT FORM");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        suspectDesc.setColumns(20);
+        suspectDesc.setRows(5);
+        jScrollPane2.setViewportView(suspectDesc);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 190, 100));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel13.setText("Suspect Description :");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
+
+        jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 460));
 
@@ -244,6 +266,12 @@ public void logEvent(int userId, String username, String userType) {
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
        handleSubmit();        // TODO add your handling code here:
     }//GEN-LAST:event_subActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      userDashboard acd = new userDashboard();
+        acd.setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,10 +316,12 @@ public void logEvent(int userId, String username, String userType) {
     private javax.swing.JTextField fname;
     private javax.swing.JComboBox<String> hh;
     private javax.swing.JComboBox<String> inty;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -302,10 +332,12 @@ public void logEvent(int userId, String username, String userType) {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> minu;
     private javax.swing.JComboBox<String> mm;
     private javax.swing.JComboBox<String> pm;
     private javax.swing.JButton sub;
+    private javax.swing.JTextArea suspectDesc;
     private javax.swing.JComboBox<String> yy;
     // End of variables declaration//GEN-END:variables
 }

@@ -38,12 +38,12 @@ public class ViewReports extends javax.swing.JFrame {
         dbConnector dbc = new dbConnector();
 
         // Query to fetch relevant columns from 'reports' table
-        ResultSet rs = dbc.getData("SELECT report_id, full_name, incident_type, description, location, " +
-                                   "CONCAT(date_of_incident, ' ', time_of_incident) AS datetime, status " +
-                                   "FROM reports");
+       ResultSet rs = dbc.getData("SELECT report_id, full_name, incident_type, description, location, " +
+                           "CONCAT(date_of_incident, ' ', time_of_incident) AS datetime, status, suspect_description " +
+                           "FROM reports");
 
-        // Assuming your JTable is named 'report_tbl'
-        tblblotter.setModel(DbUtils.resultSetToTableModel(rs));
+tblblotter.setModel(DbUtils.resultSetToTableModel(rs));
+
 
         rs.close();
     } catch (SQLException ex) {
@@ -66,14 +66,16 @@ public class ViewReports extends javax.swing.JFrame {
     }
 
     // Set column headers for reports table
-    String[] columnNames = {
-        "report_id", "full_name", "incident_type", "description",
-        "location", "date_of_incident", "time_of_incident", "status"
-    };
-    model.setColumnIdentifiers(columnNames);
+   String[] columnNames = {
+    "report_id", "full_name", "incident_type", "description",
+    "location", "date_of_incident", "time_of_incident", "status", "suspect_description"
+};
+model.setColumnIdentifiers(columnNames);
+
     model.setRowCount(0); // Clear table
 
-    String sql = "SELECT report_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status FROM reports";
+  String sql = "SELECT report_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status, suspect_description FROM reports";
+
 
     try (Connection connect = new dbConnector().getConnection();
          PreparedStatement pst = connect.prepareStatement(sql);
@@ -81,16 +83,17 @@ public class ViewReports extends javax.swing.JFrame {
 
         while (rs.next()) {
             Object[] row = {
-                rs.getInt("report_id"),
-                rs.getString("full_name"),
-                rs.getString("incident_type"),
-                rs.getString("description"),
-                rs.getString("location"),
-                rs.getDate("date_of_incident"),
-                rs.getTime("time_of_incident"),
-                rs.getString("status")
-            };
-            model.addRow(row);
+    rs.getInt("report_id"),
+    rs.getString("full_name"),
+    rs.getString("incident_type"),
+    rs.getString("description"),
+    rs.getString("location"),
+    rs.getDate("date_of_incident"),
+    rs.getTime("time_of_incident"),
+    rs.getString("status"),
+    rs.getString("suspect_description") // ✅ add suspect description
+};
+model.addRow(row);
         }
 
     } catch (SQLException ex) {
@@ -123,7 +126,8 @@ private void loadReportsData() {
     model.setRowCount(0); // Clear the table before reloading
 
     // Include status in the SELECT query
-    String sql = "SELECT report_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status FROM reports";
+ String sql = "SELECT report_id, full_name, incident_type, description, location, date_of_incident, time_of_incident, status, suspect_description FROM reports";
+
 
     try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blotter", "root", "");
          PreparedStatement pst = con.prepareStatement(sql);
@@ -131,16 +135,18 @@ private void loadReportsData() {
 
         // Iterate through ResultSet and add rows to the table
         while (rs.next()) {
-            model.addRow(new Object[] {
-                rs.getInt("report_id"),
-                rs.getString("full_name"),
-                rs.getString("incident_type"),
-                rs.getString("description"),
-                rs.getString("location"),
-                rs.getDate("date_of_incident"),
-                rs.getTime("time_of_incident"),
-                rs.getString("status")
-            });
+           model.addRow(new Object[] {
+    rs.getInt("report_id"),
+    rs.getString("full_name"),
+    rs.getString("incident_type"),
+    rs.getString("description"),
+    rs.getString("location"),
+    rs.getDate("date_of_incident"),
+    rs.getTime("time_of_incident"),
+    rs.getString("status"),
+    rs.getString("suspect_description") // ✅ added here too
+});
+
         }
 
     } catch (SQLException ex) {
@@ -196,6 +202,10 @@ private void loadReportsData() {
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -205,18 +215,18 @@ private void loadReportsData() {
 
         tblblotter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Full Name", "ID", "Incident Type", "Description", "Location", "Date of Incident", "Time of Incident", "Status"
+                "Full Name", "ID", "Incident Type", "Description", "Location", "Date of Incident", "Time of Incident", "Status", "Suspect Description"
             }
         ));
         jScrollPane1.setViewportView(tblblotter);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 690, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 740, 340));
 
         jButton1.setText("Select");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,7 +247,12 @@ private void loadReportsData() {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("BLOTTER REPORTS");
@@ -252,14 +267,108 @@ private void loadReportsData() {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 90, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 440));
+        area.setColumns(20);
+        area.setFont(new java.awt.Font("Monospaced", 1, 13)); // NOI18N
+        area.setRows(5);
+        jScrollPane2.setViewportView(area);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 240, 250));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Reset");
+        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 380, 80, 40));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Print Receipt");
+        jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, 110, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 490));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-   // TODO add your handling code here:
+   Session sess = Session.getInstance();
+int selectedRow = tblblotter.getSelectedRow(); 
+int userId = sess.getUid(); // Get logged-in user ID
+String username = sess.getUsername(); // Ensure this exists in your Session class
+
+if (selectedRow == -1) {
+    JOptionPane.showMessageDialog(this, "Please select a report first.");
+    return;
+}
+
+int reportId = Integer.parseInt(tblblotter.getValueAt(selectedRow, 0).toString()); 
+
+try {
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/blotter", "root", "");
+    String sql = "UPDATE reports SET status = 'Resolved' WHERE report_id = ?";
+    PreparedStatement stmt = conn.prepareStatement(sql);
+    stmt.setInt(1, reportId);
+    int updated = stmt.executeUpdate();
+
+    if (updated > 0) {
+        JOptionPane.showMessageDialog(this, "Report marked as resolved.");
+        
+        // Get data from selected row
+        String Fullname = tblblotter.getValueAt(selectedRow, 1).toString();
+        String Incidentype = tblblotter.getValueAt(selectedRow, 2).toString();
+        String Incidentdesc = tblblotter.getValueAt(selectedRow, 3).toString();
+        String location = tblblotter.getValueAt(selectedRow, 4).toString();
+        String Dateincident = tblblotter.getValueAt(selectedRow, 5).toString();
+        String timeIncident = tblblotter.getValueAt(selectedRow, 6).toString();
+        String status = "Resolved";
+        String suspectdesc = tblblotter.getValueAt(selectedRow, 8).toString(); // adjust if needed
+
+        // Print receipt
+        area.setText("");
+        area.append("*********************************************\n");
+        area.append("*         Blotter Report Copy     *\n");
+        area.append("*********************************************\n\n");
+        area.append("Date Printed       : " + new Date().toString() + "\n");
+        area.append("Processed By       : " + username + " (User ID: " + userId + ")\n\n");
+        area.append("Report Details:\n");
+        area.append("---------------------------------------------\n");
+        area.append("Full Name          : " + Fullname + "\n");
+        area.append("Case ID            : " + reportId + "\n");
+        area.append("Incident Type      : " + Incidentype + "\n");
+        area.append("Description        : " + Incidentdesc + "\n");
+        area.append("Location           : " + location + "\n");
+        area.append("Date of Incident   : " + Dateincident + "\n");
+        area.append("Time of Incident   : " + timeIncident + "\n");
+        area.append("Status             : " + status + "\n");
+        area.append("Suspect Description: " + suspectdesc + "\n");
+        area.append("---------------------------------------------\n");
+        area.append("Marked as resolved successfully.\n");
+
+        // Update table display
+        tblblotter.setValueAt("Resolved", selectedRow, 7); // assuming column 7 is status
+
+        // Log user action
+        logEvent(userId, username, "Resolved a blotter report (ID: " + reportId + ")");
+    } else {
+        JOptionPane.showMessageDialog(this, "Failed to update report status.");
+    }
+
+    conn.close();
+} catch (Exception e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+}
+  // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -275,6 +384,23 @@ adminDashboard adminDashboard = new adminDashboard();
     adminDashboard.setVisible(true); // Show the AdminDashboard
     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+               // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // area.setText("");
+        //username.setText("");
+        //loanamount.setText("");
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try{
+            area.print();
+        }catch(Exception e){
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,12 +439,16 @@ adminDashboard adminDashboard = new adminDashboard();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea area;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    public javax.swing.JButton jButton5;
+    public javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblblotter;
     // End of variables declaration//GEN-END:variables
 }
