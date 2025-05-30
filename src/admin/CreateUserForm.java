@@ -264,6 +264,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         ans = new javax.swing.JTextField();
         select = new javax.swing.JButton();
         remove = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -274,10 +275,11 @@ public class CreateUserForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBackground(new java.awt.Color(255, 204, 51));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel7.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel7.setLayout(null);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -303,9 +305,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel7.add(pw);
         pw.setBounds(220, 0, 190, 30);
 
-        jPanel10.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 420, 30));
+        jPanel10.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 420, 30));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -328,9 +331,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel6.add(us);
         us.setBounds(220, 0, 190, 30);
 
-        jPanel10.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 420, 30));
+        jPanel10.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 420, 30));
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -353,9 +357,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel5.add(mail);
         mail.setBounds(220, 0, 190, 30);
 
-        jPanel10.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 420, 30));
+        jPanel10.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 420, 30));
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -378,9 +383,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel4.add(jButton1);
         jButton1.setBounds(10, 0, 90, 30);
 
-        jPanel10.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 420, 30));
+        jPanel10.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 420, 30));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(null);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -408,9 +414,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel3.add(fn);
         fn.setBounds(220, 0, 190, 30);
 
-        jPanel10.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 420, 30));
+        jPanel10.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 420, 30));
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel8.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel8.setLayout(null);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -424,9 +431,10 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel8.add(ut);
         ut.setBounds(90, 0, 190, 30);
 
-        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 290, 30));
+        jPanel10.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 290, 30));
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel9.setLayout(null);
 
         stat.setBackground(new java.awt.Color(204, 204, 204));
@@ -441,18 +449,19 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel9.add(jLabel8);
         jLabel8.setBounds(0, 0, 90, 30);
 
-        jPanel10.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 290, 30));
+        jPanel10.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 290, 30));
 
+        check.setBackground(new java.awt.Color(255, 204, 51));
         check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        check.setText("show");
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkActionPerformed(evt);
             }
         });
-        jPanel10.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, 30));
+        jPanel10.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, 30));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 204, 0));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -476,7 +485,9 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel2.add(uid);
         uid.setBounds(220, 0, 190, 30);
 
-        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 420, 30));
+        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 420, 30));
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         u_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -486,46 +497,49 @@ public class CreateUserForm extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(u_image, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addComponent(u_image, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(u_image, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(u_image, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 250, 210));
+        jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 270, 240));
 
         sq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What's the name of your first pet?", "What's the lastname of your Mother?", "What's your favorite food?", "What's your favorite Color?", "What's your birth month?" }));
-        jPanel10.add(sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 320, -1));
-        jPanel10.add(ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 320, 30));
+        jPanel10.add(sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 320, -1));
+        jPanel10.add(ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 260, 30));
 
-        select.setBackground(new java.awt.Color(0, 51, 102));
+        select.setBackground(new java.awt.Color(255, 204, 0));
         select.setText("SELECT");
-        select.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        select.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectActionPerformed(evt);
             }
         });
-        jPanel10.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 80, 30));
+        jPanel10.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 80, 30));
 
-        remove.setBackground(new java.awt.Color(0, 51, 102));
+        remove.setBackground(new java.awt.Color(255, 204, 0));
         remove.setText("REMOVE");
-        remove.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        remove.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeActionPerformed(evt);
             }
         });
-        jPanel10.add(remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, 80, 30));
+        jPanel10.add(remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 280, 80, 30));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dubhey.png"))); // NOI18N
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 520, 470));
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 910, 650));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -534,6 +548,7 @@ public class CreateUserForm extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 110, 60));
 
         jLabel11.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("USER");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 270, 34));
@@ -541,11 +556,11 @@ public class CreateUserForm extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 50));
 
-        jPanel12.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel12.setBackground(new java.awt.Color(51, 51, 51));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 60, 660));
 
-        jPanel13.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel13.setBackground(new java.awt.Color(51, 51, 51));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, 60, 700));
 
@@ -853,6 +868,7 @@ try (PreparedStatement logPst = conn.prepareStatement(logQuery)) {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

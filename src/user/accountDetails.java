@@ -183,10 +183,11 @@ public class accountDetails extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ACCOUNT INFORMATION");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -194,71 +195,69 @@ public class accountDetails extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(244, 244, 244)
+                .addGap(154, 154, 154)
                 .addComponent(jLabel4)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 40));
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 20, 280));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 50, 370));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 50, 370));
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBackground(new java.awt.Color(255, 204, 51));
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Last Name");
-        jPanel12.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 90, 10));
+        jPanel12.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 90, 10));
 
-        acc_uname.setBackground(new java.awt.Color(255, 204, 255));
-        acc_uname.setBorder(null);
-        jPanel12.add(acc_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 140, 30));
+        acc_uname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.add(acc_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 140, 30));
 
-        acc_email.setBackground(new java.awt.Color(255, 204, 255));
-        acc_email.setBorder(null);
+        acc_email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         acc_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acc_emailActionPerformed(evt);
             }
         });
-        jPanel12.add(acc_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 140, 30));
+        jPanel12.add(acc_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 30));
 
-        acc_lname.setBackground(new java.awt.Color(255, 204, 255));
-        acc_lname.setBorder(null);
-        jPanel12.add(acc_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 140, 30));
+        acc_lname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.add(acc_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 140, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Email");
-        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 30, 10));
+        jPanel12.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 30, 10));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Username");
-        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, 10));
+        jPanel12.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, 10));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("First Name");
-        jPanel12.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 90, 10));
+        jPanel12.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 90, 10));
 
-        acc_fname.setBackground(new java.awt.Color(255, 204, 255));
-        acc_fname.setBorder(null);
-        jPanel12.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 30));
+        acc_fname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 30));
 
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel9MouseClicked(evt);
@@ -268,11 +267,13 @@ public class accountDetails extends javax.swing.JFrame {
 
         image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user/search.png"))); // NOI18N
-        jPanel9.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 20, 160, 130));
+        jPanel9.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 160, 130));
 
-        jPanel12.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 210, 170));
+        jPanel12.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 180));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Select");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -280,10 +281,10 @@ public class accountDetails extends javax.swing.JFrame {
         });
         jPanel12.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 70, -1));
 
-        update.setBackground(new java.awt.Color(27, 55, 77));
-        update.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setBackground(new java.awt.Color(255, 204, 0));
+        update.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         update.setText("Save ");
+        update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateMouseClicked(evt);
@@ -294,12 +295,13 @@ public class accountDetails extends javax.swing.JFrame {
                 updateActionPerformed(evt);
             }
         });
-        jPanel12.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 90, 30));
+        jPanel12.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 90, 40));
 
-        cancel.setBackground(new java.awt.Color(255, 255, 255));
-        cancel.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        cancel.setBackground(new java.awt.Color(255, 204, 0));
+        cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cancel.setForeground(new java.awt.Color(27, 57, 77));
         cancel.setText("Cancel");
+        cancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cancelMouseClicked(evt);
@@ -310,9 +312,9 @@ public class accountDetails extends javax.swing.JFrame {
                 cancelActionPerformed(evt);
             }
         });
-        jPanel12.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 100, 30));
+        jPanel12.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, 40));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel1MouseEntered(evt);
@@ -322,8 +324,7 @@ public class accountDetails extends javax.swing.JFrame {
             }
         });
 
-        cp.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        cp.setForeground(new java.awt.Color(255, 204, 255));
+        cp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cp.setText("   CHANGE PASS");
         cp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,11 +339,15 @@ public class accountDetails extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cp, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(cp, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cp, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(cp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel12.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 130, -1));
@@ -350,14 +355,15 @@ public class accountDetails extends javax.swing.JFrame {
         acc_id.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         acc_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_id.setText("ID");
-        jPanel12.add(acc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+        jPanel12.add(acc_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 90, 30));
 
         acc_type.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         acc_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_type.setText("Type");
-        jPanel12.add(acc_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 120, 30));
+        jPanel12.add(acc_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 120, 30));
 
-        jPanel13.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel13.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel13.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel13MouseClicked(evt);
@@ -371,17 +377,18 @@ public class accountDetails extends javax.swing.JFrame {
         });
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("LOG OUT");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 10));
+        jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
 
-        jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 68, 30));
+        jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 80, 30));
 
-        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 610, 370));
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 610, 370));
 
         pack();
         setLocationRelativeTo(null);

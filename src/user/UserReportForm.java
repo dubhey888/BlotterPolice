@@ -146,22 +146,25 @@ public void logEvent(int userId, String username, String userType) {
         minu = new javax.swing.JComboBox<>();
         pm = new javax.swing.JComboBox<>();
         sub = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         suspectDesc = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        fname.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 204)));
+        fname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 150, 40));
 
         inty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theft", "Assault", "Vandalism" }));
+        inty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(inty, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -174,6 +177,7 @@ public void logEvent(int userId, String username, String userType) {
 
         ID.setColumns(20);
         ID.setRows(5);
+        ID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(ID);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 200, -1));
@@ -183,6 +187,7 @@ public void logEvent(int userId, String username, String userType) {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         mm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", " " }));
+        mm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(mm, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 140, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -192,12 +197,15 @@ public void logEvent(int userId, String username, String userType) {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Incident Type :");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        Loc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(Loc, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 160, 30));
 
         jLabel6.setText("Day");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         dd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        dd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(dd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 110, -1));
 
         jLabel7.setText("Month");
@@ -207,6 +215,7 @@ public void logEvent(int userId, String username, String userType) {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         yy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025", " " }));
+        yy.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(yy, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 100, -1));
 
         jLabel9.setText("Hours");
@@ -227,20 +236,20 @@ public void logEvent(int userId, String username, String userType) {
         pm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
         jPanel1.add(pm, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
+        sub.setBackground(new java.awt.Color(255, 204, 0));
+        sub.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         sub.setText("Submit");
+        sub.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         sub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subActionPerformed(evt);
             }
         });
-        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("REPORT FORM");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel1.add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 80, 30));
 
         suspectDesc.setColumns(20);
         suspectDesc.setRows(5);
+        suspectDesc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(suspectDesc);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 190, 100));
@@ -249,15 +258,30 @@ public void logEvent(int userId, String username, String userType) {
         jLabel13.setText("Suspect Description :");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Cancel");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 409, 80, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 460));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/report1.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 580, 490));
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel12.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("REPORT FORM");
+        jPanel2.add(jLabel12);
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 470));
 
         pack();
         setLocationRelativeTo(null);
@@ -322,6 +346,7 @@ public void logEvent(int userId, String username, String userType) {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -331,6 +356,7 @@ public void logEvent(int userId, String username, String userType) {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> minu;

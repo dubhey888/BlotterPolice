@@ -200,7 +200,6 @@ public class loginForm extends javax.swing.JFrame {
         user = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         pass = new javax.swing.JPasswordField();
@@ -209,12 +208,14 @@ public class loginForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         check = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel3MouseClicked(evt);
@@ -222,16 +223,16 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        user.setBackground(new java.awt.Color(255, 204, 255));
+        user.setBackground(new java.awt.Color(255, 204, 51));
         user.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         user.setForeground(new java.awt.Color(51, 51, 51));
-        user.setBorder(null);
+        user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userActionPerformed(evt);
             }
         });
-        jPanel3.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 310, 40));
+        jPanel3.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 310, 40));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
@@ -249,7 +250,7 @@ public class loginForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, 320, 50));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 310, 50));
 
         jLabel4.setText("Click Here to Register!");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,36 +258,30 @@ public class loginForm extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 210, 90));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/harhar-removebg-preview.png"))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 520, 560));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 210, 90));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
         jLabel3.setText("Password :");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 100, 30));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 100, 30));
 
         jPanel2.setBackground(new java.awt.Color(193, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 270, -1));
 
-        pass.setBackground(new java.awt.Color(255, 204, 255));
+        pass.setBackground(new java.awt.Color(255, 204, 51));
         pass.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        pass.setBorder(null);
+        pass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
             }
         });
-        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 310, 40));
+        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 310, 40));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
         jLabel1.setText("LOGIN FORM");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 390, 60));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 390, 60));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
@@ -307,20 +302,21 @@ public class loginForm extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 320, 50));
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 310, 50));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 16)); // NOI18N
         jLabel5.setText("Username :");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 150, 30));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 150, 40));
 
+        check.setBackground(new java.awt.Color(255, 255, 255));
         check.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkActionPerformed(evt);
             }
         });
-        jPanel3.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, -1, -1));
+        jPanel3.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, -1, -1));
 
         jLabel7.setText("Forgot Password?");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -328,9 +324,12 @@ public class loginForm extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, 170, 70));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 380, 170, 70));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 520));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/badge.png"))); // NOI18N
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 470, 410));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 450));
 
         pack();
         setLocationRelativeTo(null);
@@ -491,10 +490,10 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

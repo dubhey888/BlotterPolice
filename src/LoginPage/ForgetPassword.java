@@ -215,81 +215,86 @@ public void logEvent(int userId, String username, String description) {
         Submit = new javax.swing.JButton();
         Search = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 204, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setText("USERNAME:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 130, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, 30));
 
-        un.setBackground(new java.awt.Color(204, 204, 204));
-        un.setBorder(null);
-        jPanel2.add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 220, 30));
+        un.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(un, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 220, 30));
 
         sq.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favorite color ?", "What is your pet ?", "What is your favorite game ?", "What is your favorite subject ?", "Who is your favorite teacher ?" }));
-        jPanel2.add(sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 230, -1));
+        jPanel2.add(sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 230, -1));
 
-        ans.setBackground(new java.awt.Color(255, 204, 204));
-        ans.setBorder(null);
-        jPanel2.add(ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 270, 30));
+        ans.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 200, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setText("NEW PASSWORD:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 82, -1, 30));
 
-        Newpass.setBackground(new java.awt.Color(255, 204, 204));
-        Newpass.setBorder(null);
-        jPanel2.add(Newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 220, 30));
+        Newpass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 220, 30));
 
         Submit.setBackground(new java.awt.Color(255, 255, 255));
         Submit.setText("Submit");
+        Submit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         Submit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SubmitMouseClicked(evt);
             }
         });
-        jPanel2.add(Submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 120, 50));
+        jPanel2.add(Submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 110, 40));
 
         Search.setBackground(new java.awt.Color(255, 255, 255));
         Search.setText("Search");
+        Search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchMouseClicked(evt);
             }
         });
-        jPanel2.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 80, 30));
+        jPanel2.add(Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 80, 30));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Cancel");
+        jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, 50));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 110, 40));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 540, 340));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bub2.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 290, 270));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 590, 370));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("FORGOT PASSWORD");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 450, 60));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 450, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
         );
 
         pack();
@@ -398,6 +403,7 @@ public void logEvent(int userId, String username, String description) {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> sq;

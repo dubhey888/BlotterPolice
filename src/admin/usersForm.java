@@ -311,14 +311,15 @@ public class usersForm extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 80));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("              Current User");
         jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 290, 140, 20));
 
         acc_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_id.setText("ID");
@@ -334,7 +335,7 @@ public class usersForm extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -362,7 +363,7 @@ public class usersForm extends javax.swing.JFrame {
                 updateActionPerformed(evt);
             }
         });
-        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 140, 40));
+        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 140, 40));
 
         register1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         register1.setText("DELETE");
@@ -371,9 +372,10 @@ public class usersForm extends javax.swing.JFrame {
                 register1ActionPerformed(evt);
             }
         });
-        jPanel2.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 130, 40));
+        jPanel2.add(register1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 130, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("BACK");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -381,20 +383,20 @@ public class usersForm extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 70));
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 204, 51));
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, 330));
 
-        jPanel4.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 204, 51));
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 700, -1));
 
-        jPanel6.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(255, 204, 51));
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 700, -1));
 
-        jPanel7.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel7.setBackground(new java.awt.Color(255, 204, 51));
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, -1, 310));
 
         user_table.setModel(new javax.swing.table.DefaultTableModel(
